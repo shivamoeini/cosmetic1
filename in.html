@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pure.CSS | Menus</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+    />
+
+    <style>
+      .onclick-menu {
+        position: relative;
+        display: inline-block;
+      }
+      .onclick-menu:before {
+        content: "Menu";
+      }
+      .onclick-menu:focus {
+        pointer-events: none;
+      }
+      .onclick-menu:focus .onclick-menu-content {
+        opacity: 1;
+        visibility: visible;
+
+        pointer-events: auto;
+      }
+      .onclick-menu-content {
+        position: absolute;
+        z-index: 1;
+
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.5s;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div tabindex="0" class="onclick-menu">
+      <ul class="onclick-menu-content">
+        <li><i onclick="alert('click 1')">home</i></li>
+        <li><i onclick="alert('click 2')">product</i></li>
+        <li><i onclick="alert('click 3')">a bout</i></li>
+        <li><i onclick="alert('click 4')">cantact</i></li>
+      </ul>
+    </div>
+  </body>
+</html>
